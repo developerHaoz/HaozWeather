@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     public static void startActivity(Context context){
         Intent intent = new Intent(context, MainActivity.class);
         context.startActivity(intent);
+
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
     public static class TestNewEvent{
 
         private String testInfo;
-
         public String getTestInfo() {
             return testInfo;
         }
