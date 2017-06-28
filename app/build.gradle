@@ -4,7 +4,7 @@ android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
     defaultConfig {
-        applicationId "com.example.developerhaoz.haozweather"
+        applicationId rootProject.ext.android.applicationId
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
@@ -19,6 +19,10 @@ android {
     }
 }
 
+repositories {
+    mavenCentral() // jcenter() works as well because it pulls from Maven Central
+}
+
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -31,6 +35,10 @@ dependencies {
     compile rootProject.ext.dependencies["gson"]
     compile rootProject.ext.dependencies["logger"]
     compile rootProject.ext.dependencies["okhttp"]
+    compile rootProject.ext.dependencies["design"]
+    compile rootProject.ext.dependencies["glide"]
+    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+
     testCompile 'junit:junit:4.12'
     compile files('libs/volley.jar')
 }
