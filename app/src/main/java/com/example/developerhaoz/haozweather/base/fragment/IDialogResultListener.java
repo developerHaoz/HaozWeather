@@ -6,5 +6,6 @@ package com.example.developerhaoz.haozweather.base.fragment;
  * Created by developerHaoz on 2017/6/28.
  */
 
-public class IDialogResultListener {
+interface IDialogResultListener<T> {
+    void onDataResult(T result);
 }

@@ -18,8 +18,6 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.example.developerhaoz.haozweather.R;
-import com.example.developerhaoz.haozweather.common.GlideApp;
-import com.example.developerhaoz.haozweather.common.GlideRequests;
 import com.example.developerhaoz.haozweather.ui.HaozWeatherApplication;
 
 import java.io.File;
@@ -407,10 +405,14 @@ public class CommonImageLoader {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof Keeper && key == ((Keeper) obj).key) {
+            if (foo(obj)) {
                 return true;
             }
             return false;
+        }
+
+        private boolean foo(Object obj) {
+            return obj instanceof Keeper && key == ((Keeper) obj).key;
         }
     }
 }
