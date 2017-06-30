@@ -1,4 +1,4 @@
-package com.example.developerhaoz.haozweather.common.img;
+package com.example.developerhaoz.haozweather.common;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,7 +18,8 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.example.developerhaoz.haozweather.R;
-import com.example.developerhaoz.haozweather.ui.HaozWeatherApplication;
+import com.example.developerhaoz.haozweather.common.img.GlideApp;
+import com.example.developerhaoz.haozweather.common.img.GlideRequests;
 
 import java.io.File;
 import java.util.HashSet;

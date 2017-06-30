@@ -1,6 +1,9 @@
-package com.example.developerhaoz.haozweather.ui;
+package com.example.developerhaoz.haozweather.common;
 
 import android.app.Application;
+
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.Logger;
 
 /**
  * 自定义的 Application
@@ -16,6 +19,7 @@ public class HaozWeatherApplication extends Application {
     public void onCreate() {
         super.onCreate();
         sInstance = this;
+        Logger.addLogAdapter(new AndroidLogAdapter());
     }
 
     public static HaozWeatherApplication getInstance(){

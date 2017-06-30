@@ -1,4 +1,4 @@
-package com.example.developerhaoz.haozweather.ui;
+package com.example.developerhaoz.haozweather.view;
 
 /**
  * Created by developerHaoz on 2017/6/26.

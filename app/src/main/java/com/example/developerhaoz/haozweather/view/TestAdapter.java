@@ -1,6 +1,7 @@
-package com.example.developerhaoz.haozweather.ui;
+package com.example.developerhaoz.haozweather.view;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,25 +19,24 @@ import java.util.List;
 
 class TestAdapter extends RecyclerView.Adapter<TestAdapter.TestViewHolder> {
 
-    private OnItemClickListener mClickListener;
+    private static final String TAG = "TestAdapter";
 
-    interface OnItemClickListener{
-        void onItemClick(int position);
+    final private ListItemClickListener mOnClickener;
+
+    public interface ListItemClickListener{
+        void onListItemClick(int position);
     }
 
     private List<Integer> mList;
 
-//    public TestAdapter(List<Integer> mList){
-//        this.mList = mList;
-//    }
-//
-//    public void setOnItemClickListener(OnItemClickListener listener){
-//        this.mClickListener = listener;
-//    }
+    public TestAdapter(List<Integer> mList, ListItemClickListener listener){
+        this.mList = mList;
+        this.mOnClickener = listener;
+    }
 
     @Override
     public TestViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_test, parent);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_test, null);
         return new TestViewHolder(view);
 
     }
@@ -44,6 +44,12 @@ class TestAdapter extends RecyclerView.Adapter<TestAdapter.TestViewHolder> {
     @Override
     public void onBindViewHolder(TestViewHolder holder, final int position) {
         holder.mTvTest.setText(R.string.HEHEHE);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: ");
+            }
+        });
 
     }
 
@@ -53,7 +59,7 @@ class TestAdapter extends RecyclerView.Adapter<TestAdapter.TestViewHolder> {
         return mList.size();
     }
 
-    class TestViewHolder extends RecyclerView.ViewHolder{
+    class TestViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private TextView mTvTest;
 
@@ -61,5 +67,10 @@ class TestAdapter extends RecyclerView.Adapter<TestAdapter.TestViewHolder> {
             super(itemView);
             mTvTest = (TextView) itemView.findViewById(R.id.item_test_tv);
         }
-     }
+
+        @Override
+        public void onClick(View v) {
+            mOnClickener.onListItemClick(getAdapterPosition());
+        }
+    }
 }

@@ -1,4 +1,4 @@
-package com.example.developerhaoz.haozweather.ui;
+package com.example.developerhaoz.haozweather.view;
 
 import android.content.Context;
 import android.content.Intent;
