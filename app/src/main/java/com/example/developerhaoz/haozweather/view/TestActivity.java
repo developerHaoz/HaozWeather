@@ -14,8 +14,11 @@ import android.widget.Button;
 import com.example.developerhaoz.haozweather.R;
 import com.example.developerhaoz.haozweather.base.net.HttpUtil;
 import com.example.developerhaoz.haozweather.base.net.OnResponseCallback;
+import com.example.developerhaoz.haozweather.utils.UrlUtils;
 import com.orhanobut.logger.Logger;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,10 +60,16 @@ public class TestActivity extends AppCompatActivity implements TestAdapter.ListI
             mList.add(i);
         }
 
-        HttpUtil.sendHttpGet(this, GET_DUANZI, new OnResponseCallback() {
+        String urlTest = "http://guolin.tech/api/china";
+        try{
+            urlTest = URLEncoder.encode(urlTest, "utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        HttpUtil.sendHttpGet(this, UrlUtils.getWeatherUrl("北京"), new OnResponseCallback() {
             @Override
             public void onSuccess(String response) {
-                Log.d(TAG, "onSuccess111: " + response);
+                Logger.json(response);
             }
 
             @Override

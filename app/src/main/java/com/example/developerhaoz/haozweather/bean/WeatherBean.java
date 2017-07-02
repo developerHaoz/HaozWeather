@@ -1,4 +1,4 @@
-package com.example.developerhaoz.haozweather.db;
+package com.example.developerhaoz.haozweather.bean;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import java.util.List;
  * Created by developerHaoz on 2017/6/30.
  */
 
-public class HeWeatherBean {
+public class WeatherBean {
 
 
     /**

@@ -33,21 +33,6 @@ public class HttpUtil {
         });
         requestQueue.add(stringRequest);
     }
-//    public static void sendHttpGet(Context context, String url, final OnResponseCallback callback){
-//        RequestQueue requestQueue = Volley.newRequestQueue(context);
-//        StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
-//            @Override
-//            public void onResponse(String s) {
-//                callback.onSuccess(s);
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                callback.onError(error);
-//            }
-//        });
-//        requestQueue.add(stringRequest);
-//    }
 
 }
 
