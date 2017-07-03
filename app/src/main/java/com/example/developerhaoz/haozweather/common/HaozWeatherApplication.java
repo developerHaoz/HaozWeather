@@ -1,9 +1,9 @@
 package com.example.developerhaoz.haozweather.common;
 
-import android.app.Application;
-
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
+
+import org.litepal.LitePalApplication;
 
 /**
  * 自定义的 Application
@@ -11,7 +11,7 @@ import com.orhanobut.logger.Logger;
  * Created by developerHaoz on 2017/6/26.
  */
 
-public class HaozWeatherApplication extends Application {
+public class HaozWeatherApplication extends LitePalApplication {
 
     private static HaozWeatherApplication sInstance;
 

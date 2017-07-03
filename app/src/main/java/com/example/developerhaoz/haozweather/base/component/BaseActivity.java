@@ -6,6 +6,8 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import com.example.developerhaoz.haozweather.base.fragment.DialogFragmentHelper;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -60,7 +62,7 @@ public abstract class BaseActivity extends AppCompatActivity{
 
     protected DialogFragment showLoading(String message){
         if(mDialogFragment == null){
-            // TODO: 添加显示正在加载的 DialogFragment
+            mDialogFragment = DialogFragmentHelper.showProgress(getSupportFragmentManager(), message);
         }
         return mDialogFragment;
     }
